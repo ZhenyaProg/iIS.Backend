@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "F:\\C# Projects\\iIS\\iIS.Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{43A7583B-36BA-4A12-92EC-4465F6265534}|iIS.Core\\iIS.Core.csproj|f:\\c# projects\\iis\\iis.backend\\iis.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A7583B-36BA-4A12-92EC-4465F6265534}|iIS.Core\\iIS.Core.csproj|solutionrelative:iis.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A7583B-36BA-4A12-92EC-4465F6265534}|iIS.Core\\iIS.Core.csproj|f:\\c# projects\\iis\\iis.backend\\iis.core\\repositories\\iusersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A7583B-36BA-4A12-92EC-4465F6265534}|iIS.Core\\iIS.Core.csproj|solutionrelative:iis.core\\repositories\\iusersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87F881A-FE5E-4E8F-B6A9-0C5701277F2A}|iIS.Application\\iIS.Application.csproj|f:\\c# projects\\iis\\iis.backend\\iis.application\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F87F881A-FE5E-4E8F-B6A9-0C5701277F2A}|iIS.Application\\iIS.Application.csproj|solutionrelative:iis.application\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|f:\\c# projects\\iis\\iis.backend\\iis.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|solutionrelative:iis.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A7583B-36BA-4A12-92EC-4465F6265534}|iIS.Core\\iIS.Core.csproj|f:\\c# projects\\iis\\iis.backend\\iis.core\\services\\iusersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A7583B-36BA-4A12-92EC-4465F6265534}|iIS.Core\\iIS.Core.csproj|solutionrelative:iis.core\\services\\iusersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|f:\\c# projects\\iis\\iis.backend\\iis.api\\validation\\createuserrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|solutionrelative:iis.api\\validation\\createuserrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A7583B-36BA-4A12-92EC-4465F6265534}|iIS.Core\\iIS.Core.csproj|f:\\c# projects\\iis\\iis.backend\\iis.core\\errors\\containsuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A7583B-36BA-4A12-92EC-4465F6265534}|iIS.Core\\iIS.Core.csproj|solutionrelative:iis.core\\errors\\containsuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|f:\\c# projects\\iis\\iis.backend\\iis.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|solutionrelative:iis.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|f:\\c# projects\\iis\\iis.backend\\iis.api\\contracts\\createuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|solutionrelative:iis.api\\contracts\\createuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|f:\\c# projects\\iis\\iis.backend\\iis.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|solutionrelative:iis.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|f:\\c# projects\\iis\\iis.backend\\iis.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{56153209-B403-4A28-8F3B-A3F83293AB47}|iIS.API\\iIS.API.csproj|solutionrelative:iis.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -35,6 +75,136 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Core\\Models\\User.cs",
+              "RelativeDocumentMoniker": "iIS.Core\\Models\\User.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Core\\Models\\User.cs",
+              "RelativeToolTip": "iIS.Core\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:52:36.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IUsersRepository.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Core\\Repositories\\IUsersRepository.cs",
+              "RelativeDocumentMoniker": "iIS.Core\\Repositories\\IUsersRepository.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Core\\Repositories\\IUsersRepository.cs",
+              "RelativeToolTip": "iIS.Core\\Repositories\\IUsersRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:51:56.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsersService.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Application\\Services\\UsersService.cs",
+              "RelativeDocumentMoniker": "iIS.Application\\Services\\UsersService.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Application\\Services\\UsersService.cs",
+              "RelativeToolTip": "iIS.Application\\Services\\UsersService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:50:57.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUsersService.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Core\\Services\\IUsersService.cs",
+              "RelativeDocumentMoniker": "iIS.Core\\Services\\IUsersService.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Core\\Services\\IUsersService.cs",
+              "RelativeToolTip": "iIS.Core\\Services\\IUsersService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:37:19.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ContainsUser.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Core\\Errors\\ContainsUser.cs",
+              "RelativeDocumentMoniker": "iIS.Core\\Errors\\ContainsUser.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.Core\\Errors\\ContainsUser.cs",
+              "RelativeToolTip": "iIS.Core\\Errors\\ContainsUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:31:34.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateUserRequestValidator.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Validation\\CreateUserRequestValidator.cs",
+              "RelativeDocumentMoniker": "iIS.API\\Validation\\CreateUserRequestValidator.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Validation\\CreateUserRequestValidator.cs",
+              "RelativeToolTip": "iIS.API\\Validation\\CreateUserRequestValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:25:38.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateUserRequest.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Contracts\\CreateUserRequest.cs",
+              "RelativeDocumentMoniker": "iIS.API\\Contracts\\CreateUserRequest.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Contracts\\CreateUserRequest.cs",
+              "RelativeToolTip": "iIS.API\\Contracts\\CreateUserRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:20:49.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "iIS.API\\Controllers\\AuthController.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "iIS.API\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAMwC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:12:49.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "iIS.API\\Controllers\\UserController.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "iIS.API\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:10:49.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Program.cs",
+              "RelativeDocumentMoniker": "iIS.API\\Program.cs",
+              "ToolTip": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Program.cs",
+              "RelativeToolTip": "iIS.API\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T14:02:02.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "launchSettings.json",
               "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "iIS.API\\Properties\\launchSettings.json",
@@ -47,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\appsettings.json",
               "RelativeDocumentMoniker": "iIS.API\\appsettings.json",
@@ -60,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "F:\\C# Projects\\iIS\\iIS.Backend\\iIS.API\\appsettings.Development.json",
               "RelativeDocumentMoniker": "iIS.API\\appsettings.Development.json",
