@@ -34,17 +34,15 @@ namespace iIS.API.Controllers
                 await _usersService.Register(request.UserName, request.Email, request.Password);
                 return Results.Created();
             }
-            catch(ContainsUser cuException)
+            catch(ExistUserException cuException)
             {
                 return Results.Conflict(cuException.Message);
             }
             catch(Exception ex)
             {
                 _logger.LogError(ex.Message);
-                Results.StatusCode(StatusCodes.Status500InternalServerError);
+                return Results.StatusCode(StatusCodes.Status500InternalServerError);
             }
-
-            return Results.BadRequest();
         }
     }
 }
