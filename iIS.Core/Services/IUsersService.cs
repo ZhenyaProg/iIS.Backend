@@ -1,8 +1,10 @@
-﻿
+﻿using iIS.Core.Models;
+
 namespace iIS.Core.Services
 {
     public interface IUsersService
     {
-        Task Register(string userName, string email, string password);
+        Task<User> Login(string loginType, string login, string password);
+        Task Register(string userName, DateOnly birthDate, string email, string password);
     }
 }

@@ -1,8 +1,8 @@
-﻿using iIS.Core.Models;
+﻿using iIS.Core.Auth;
+using iIS.Core.Models;
 using iIS.Core.Repositories;
 using iIS.DataAccess.PostrgeSQL.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 
 namespace iIS.DataAccess.PostrgeSQL.Repositories
 {
@@ -21,6 +21,7 @@ namespace iIS.DataAccess.PostrgeSQL.Repositories
             {
                 Id = user.Id,
                 UserName = user.UserName,
+                BirthDay = user.BirthDay.ToShortDateString(),
                 Email = user.Email,
                 HashedPassword = user.HashedPassword,
                 Role = (byte)user.Role
@@ -42,9 +43,25 @@ namespace iIS.DataAccess.PostrgeSQL.Repositories
             return result;
         }
 
+        public async Task<User?> GetByName(string login)
+        {
+            UserEntity? entity = await _context.Users.FirstOrDefaultAsync(entity => entity.UserName == login);
+            if (entity == null) return null;
+            User user = CreateUser(entity);
+            return user;
+        }
+
+        public async Task<User?> GetByEmail(string email)
+        {
+            UserEntity? entity = await _context.Users.FirstOrDefaultAsync(entity => entity.Email == email);
+            if (entity == null) return null;
+            User user = CreateUser(entity);
+            return user;
+        }
+
         private User CreateUser(UserEntity entity)
         {
-            return new User(entity.Id, entity.UserName, entity.Email, entity.HashedPassword, (Role)entity.Role);
+            return new User(entity.Id, entity.UserName, DateOnly.Parse(entity.BirthDay), entity.Email, entity.HashedPassword, (Role)entity.Role);
         }
     }
 }

@@ -16,6 +16,10 @@ namespace iIS.API.Validation
             RuleFor(request => request.Email)
                 .NotEmpty()
                 .EmailAddress();
+
+            RuleFor(request => request.BirthDate)
+                .NotEmpty()
+                .Must((date) => DateOnly.TryParse(date, out var parsedDate));
         }
     }
 }

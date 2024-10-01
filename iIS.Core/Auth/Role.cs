@@ -1,4 +1,4 @@
-﻿namespace iIS.Core.Models
+﻿namespace iIS.Core.Auth
 {
     public enum Role : byte
     {
