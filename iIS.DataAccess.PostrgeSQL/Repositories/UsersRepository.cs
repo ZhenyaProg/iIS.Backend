@@ -31,6 +31,12 @@ namespace iIS.DataAccess.PostrgeSQL.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<bool> ContainsById(Guid userId)
+        {
+            var result = await _context.Users.AnyAsync(entity => entity.Id == userId);
+            return result;
+        }
+
         public async Task<bool> ContainsByName(string userName)
         {
             var result = await _context.Users.AnyAsync(entity => entity.UserName == userName);
@@ -45,7 +51,9 @@ namespace iIS.DataAccess.PostrgeSQL.Repositories
 
         public async Task<User?> GetByName(string login)
         {
-            UserEntity? entity = await _context.Users.FirstOrDefaultAsync(entity => entity.UserName == login);
+            UserEntity? entity = await _context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(entity => entity.UserName == login);
             if (entity == null) return null;
             User user = CreateUser(entity);
             return user;
@@ -53,10 +61,38 @@ namespace iIS.DataAccess.PostrgeSQL.Repositories
 
         public async Task<User?> GetByEmail(string email)
         {
-            UserEntity? entity = await _context.Users.FirstOrDefaultAsync(entity => entity.Email == email);
+            UserEntity? entity = await _context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(entity => entity.Email == email);
             if (entity == null) return null;
             User user = CreateUser(entity);
             return user;
+        }
+
+        public async Task<User?> GetById(Guid userId)
+        {
+            UserEntity? entity = await _context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(entity => entity.Id == userId);
+            if (entity == null) return null;
+            User user = CreateUser(entity);
+            return user;
+        }
+
+        public async Task Update(Guid userId, string email, DateOnly birthDate)
+        {
+            await _context.Users
+                .Where(userEntity => userEntity.Id == userId)
+                .ExecuteUpdateAsync(s => s
+                    .SetProperty(entity => entity.Email, email)
+                    .SetProperty(entity => entity.BirthDay, birthDate.ToShortDateString()));
+        }
+
+        public async Task Delete(Guid userId)
+        {
+            await _context.Users
+                .Where(userEntity => userEntity.Id == userId)
+                .ExecuteDeleteAsync();
         }
 
         private User CreateUser(UserEntity entity)

@@ -19,7 +19,21 @@ namespace iIS.API.Validation
 
             RuleFor(request => request.BirthDate)
                 .NotEmpty()
-                .Must((date) => DateOnly.TryParse(date, out var parsedDate));
+                .Must((date) =>
+                {
+                    if (!DateOnly.TryParse(date, out var parsedDate))
+                        return false;
+
+                    DateTime now = DateTime.Now;
+                    now = now.AddYears(-parsedDate.Year);
+                    now = now.AddMonths(-parsedDate.Month);
+                    now = now.AddDays(-parsedDate.Day);
+
+                    if (now.Year >= 14)
+                        return true;
+
+                    return false;
+                });
         }
     }
 }

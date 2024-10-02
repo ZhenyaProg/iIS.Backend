@@ -28,7 +28,7 @@ namespace iIS.Application.Services
             await _usersRepository.Add(newUser);
         }
 
-        public async Task<User> Login(string loginType, string login, string password)
+        public async Task<User> LogIn(string loginType, string login, string password)
         {
             User? user = loginType switch
             {
@@ -44,6 +44,34 @@ namespace iIS.Application.Services
                 throw new WrongPasswordException("Неверный пароль");
 
             return user;
+        }
+
+        public async Task<User> EditUser(Guid userId, string email, DateOnly birthDate)
+        {
+            bool containsUser = await _usersRepository.ContainsById(userId);
+            if(containsUser is false)
+                throw new NotFoundUserException($"Нет пользователя с таким {userId}");
+
+            await _usersRepository.Update(userId, email, birthDate);
+
+            return await _usersRepository.GetById(userId);
+        }
+
+        public async Task DeleteUser(Guid userId)
+        {
+            bool containsUser = await _usersRepository.ContainsById(userId);
+            if (containsUser is false)
+                throw new NotFoundUserException($"Нет пользователя с таким {userId}");
+
+            await _usersRepository.Delete(userId);
+        }
+
+        public async Task LogOut(Guid userId)
+        {
+            User? user = await _usersRepository.GetById(userId);
+
+            if (user is null)
+                throw new NotFoundUserException("Нет пользователя с таким id");
         }
     }
 }

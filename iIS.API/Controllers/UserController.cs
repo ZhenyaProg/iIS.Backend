@@ -1,15 +1,33 @@
-﻿using iIS.Core.Auth;
+﻿using FluentValidation.Results;
+using iIS.API.Contracts;
+using iIS.API.Validation;
+using iIS.Core.Auth;
+using iIS.Core.Errors;
+using iIS.Core.Models;
+using iIS.Core.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
 namespace iIS.API.Controllers
 {
     [Route("api/user")]
     [ApiController]
-    [Authorize]
     public class UserController : ControllerBase
     {
+        private readonly IUsersService _usersService;
+        private readonly ITokenProvider _tokenProvider;
+        private readonly ILogger<UserController> _logger;
+
+        public UserController(IUsersService usersService, ITokenProvider tokenProvider, ILogger<UserController> logger)
+        {
+            _usersService = usersService;
+            _tokenProvider = tokenProvider;
+            _logger = logger;
+        }
+
         [HttpGet]
         [Route("info")]
         [Authorize(Policy = nameof(Policy.User))]
@@ -34,6 +52,59 @@ namespace iIS.API.Controllers
                 return Results.Ok(userData);
             }
             return Results.BadRequest();
+        }
+
+        [HttpPut]
+        [Route("")]
+        [Authorize(Policy = nameof(Policy.User))]
+        public async Task<IResult> EditUserData([FromBody] EditUserRequest request, [FromHeader] Guid userId)
+        {
+            var validator = new EditRequestValidator();
+            ValidationResult validationResult = validator.Validate(request);
+            if (!validationResult.IsValid)
+                return Results.BadRequest(validationResult.Errors);
+
+            try
+            {
+                DateOnly birthDate = DateOnly.Parse(request.BirthDate);
+                User user = await _usersService.EditUser(userId, request.Email, birthDate);
+
+                string token = _tokenProvider.GenerateToken(user);
+                Response.Cookies.Append("auth-key", token);
+
+                return Results.Ok();
+            }
+            catch (NotFoundUserException ex)
+            {
+                return Results.NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return Results.StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpDelete]
+        [Route("")]
+        [Authorize(Policy = nameof(Policy.User))]
+        public async Task<IResult> DeleteUser([FromHeader] Guid userId)
+        {
+            try
+            {
+                await _usersService.DeleteUser(userId);
+                Response.Cookies.Delete("auth-key");
+                return Results.Ok();
+            }
+            catch (NotFoundUserException ex)
+            {
+                return Results.NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return Results.StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }
