@@ -7,8 +7,6 @@ using iIS.Core.Models;
 using iIS.Core.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
 namespace iIS.API.Controllers
@@ -67,7 +65,13 @@ namespace iIS.API.Controllers
             try
             {
                 DateOnly birthDate = DateOnly.Parse(request.BirthDate);
-                User user = await _usersService.EditUser(userId, request.Email, birthDate);
+                User editData = new User
+                {
+                    UserName = request.UserName,
+                    Email = request.Email,
+                    BirthDay = birthDate,
+                };
+                User user = await _usersService.EditUser(userId, editData);
 
                 string token = _tokenProvider.GenerateToken(user);
                 Response.Cookies.Append("auth-key", token);

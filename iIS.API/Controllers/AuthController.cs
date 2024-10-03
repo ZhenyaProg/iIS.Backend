@@ -40,7 +40,13 @@ namespace iIS.API.Controllers
             try
             {
                 DateOnly birthDate = DateOnly.Parse(request.BirthDate);
-                await _usersService.Register(request.UserName, birthDate, request.Email, request.Password);
+                User registeredUser = new User
+                {
+                    UserName = request.UserName,
+                    BirthDay = birthDate,
+                    Email = request.Email,
+                };
+                await _usersService.Register(registeredUser, request.Password);
                 return Results.Created();
             }
             catch(ExistUserException ex)

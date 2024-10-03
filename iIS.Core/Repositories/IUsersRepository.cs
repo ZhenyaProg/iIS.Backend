@@ -11,7 +11,7 @@ namespace iIS.Core.Repositories
         Task<User?> GetByEmail(string email);
         Task<User?> GetByName(string login);
         Task<User?> GetById(Guid userId);
-        Task Update(Guid userId, string email, DateOnly birthDate);
+        Task Update(Guid userId, User editData);
         Task Delete(Guid userId);
     }
 }

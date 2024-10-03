@@ -1,6 +1,5 @@
 ﻿using iIS.Core.Auth;
 using iIS.Core.Models;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

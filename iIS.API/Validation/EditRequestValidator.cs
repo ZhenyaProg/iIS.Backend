@@ -7,6 +7,9 @@ namespace iIS.API.Validation
     {
         public EditRequestValidator()
         {
+            RuleFor(request => request.UserName)
+                .NotEmpty();
+
             RuleFor(request => request.Email)
                 .NotEmpty()
                 .EmailAddress();

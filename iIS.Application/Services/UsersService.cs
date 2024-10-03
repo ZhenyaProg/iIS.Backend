@@ -17,15 +17,18 @@ namespace iIS.Application.Services
             _passwordHasher = passwordHasher;
         }
 
-        public async Task Register(string userName, DateOnly birthDate, string email, string password)
+        public async Task Register(User user, string password)
         {
-            bool containsUser = await _usersRepository.ContainsByName(userName) &&
-                                await _usersRepository.ContainsByEmail(email);
+            bool containsUser = await _usersRepository.ContainsByName(user.UserName) &&
+                                await _usersRepository.ContainsByEmail(user.Email);
             if (containsUser)
                 throw new ExistUserException("Пользователь с таким ником или email`ом уже существует");
 
-            User newUser = new User(Guid.NewGuid(), userName, birthDate, email, _passwordHasher.Hash(password), Role.User);
-            await _usersRepository.Add(newUser);
+            user.Id = Guid.NewGuid();
+            user.HashedPassword = _passwordHasher.Hash(password);
+            user.Role = Role.User;
+
+            await _usersRepository.Add(user);
         }
 
         public async Task<User> LogIn(string loginType, string login, string password)
@@ -46,13 +49,13 @@ namespace iIS.Application.Services
             return user;
         }
 
-        public async Task<User> EditUser(Guid userId, string email, DateOnly birthDate)
+        public async Task<User> EditUser(Guid userId, User editData)
         {
             bool containsUser = await _usersRepository.ContainsById(userId);
             if(containsUser is false)
                 throw new NotFoundUserException($"Нет пользователя с таким {userId}");
 
-            await _usersRepository.Update(userId, email, birthDate);
+            await _usersRepository.Update(userId, editData);
 
             return await _usersRepository.GetById(userId);
         }

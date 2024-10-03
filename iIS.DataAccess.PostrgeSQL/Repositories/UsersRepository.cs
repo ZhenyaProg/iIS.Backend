@@ -79,13 +79,14 @@ namespace iIS.DataAccess.PostrgeSQL.Repositories
             return user;
         }
 
-        public async Task Update(Guid userId, string email, DateOnly birthDate)
+        public async Task Update(Guid userId, User editData)
         {
             await _context.Users
                 .Where(userEntity => userEntity.Id == userId)
                 .ExecuteUpdateAsync(s => s
-                    .SetProperty(entity => entity.Email, email)
-                    .SetProperty(entity => entity.BirthDay, birthDate.ToShortDateString()));
+                    .SetProperty(entity => entity.UserName, editData.UserName)
+                    .SetProperty(entity => entity.Email, editData.Email)
+                    .SetProperty(entity => entity.BirthDay, editData.BirthDay.ToShortDateString()));
         }
 
         public async Task Delete(Guid userId)
@@ -97,7 +98,15 @@ namespace iIS.DataAccess.PostrgeSQL.Repositories
 
         private User CreateUser(UserEntity entity)
         {
-            return new User(entity.Id, entity.UserName, DateOnly.Parse(entity.BirthDay), entity.Email, entity.HashedPassword, (Role)entity.Role);
+            return new User
+            {
+                Id = entity.Id,
+                UserName = entity.UserName,
+                BirthDay = DateOnly.Parse(entity.BirthDay),
+                Email = entity.Email,
+                HashedPassword = entity.HashedPassword,
+                Role = (Role)entity.Role,
+            };
         }
     }
 }
